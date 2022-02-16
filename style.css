@@ -1,0 +1,185 @@
+@charset "UTF-8";
+
+@font-face{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2em;
+    font-family: 'Android';
+    src: url('pacote-projeto-d010/fontes/idroid.otf') format('opentype');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+/* Declaração de variáveis em CSS. Seu uso facilita muito a alteração das características do site. */
+:root{ /* É a raíz da árvore do documento. */
+    --cor1: #C5EBD6;
+    --cor2: #84E1AD;
+    --cor3: #2FA866;
+    --cor4: #1A5C38;
+
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --fonte-destaque: 'Bebas Neue';
+    --fonte-android: 'Android', cursive;
+    /* Para declarar uma variável é preciso comecar com "--". */
+}
+/*
+* { Poderíamos ter utilizado essa configuração e ir ajustando as margens conforme conveniente, mas é apenas outra possibilidade para os ajustes.
+    margin: 0px;
+    padding: 0px;
+}
+*/
+
+body{
+    font-size: normal;
+    font-family: var(--fonte-padrao);
+    background-color: var(--cor2);
+    margin: 0px;
+}
+header{
+    background-image: linear-gradient(to bottom, var(--cor3), var(--cor4));
+    color: white;
+    min-height: 150px;
+    padding-top: 20px;
+}
+header > h1{
+    font-weight: normal;
+    font-size: 3em;
+    font-family: var(--fonte-destaque);
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin: 0px;
+    padding: 20px;
+}
+header > p{
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin: 20px;
+}
+nav{
+    background-color: var(--cor4);
+    padding: 5px;
+    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.493);
+}
+nav > a{
+    text-decoration: none;
+    color: var(--cor1);
+    font-weight: bold;
+    margin-right: 12px;
+    padding: 5px;
+    transition-duration: 0.3s;
+}
+nav > a:hover{
+    text-decoration: none;
+    background-color: var(--cor1);
+    color: var(--cor4);
+    border-radius: 4px;
+}
+main{
+    background-color: white;
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.493);
+    min-width: 300px;
+    max-width: 1000px;
+    margin: auto;
+    padding: 10px;
+}
+main img{
+    width: 100%;
+    /* Note que não colocamos o sinal ">", pois, nesse caso, img pode estar dentro de main em qualquer nível. */
+}
+main img.pequeno{
+    max-width: 350px;
+    display: block; /* transformamos a imagem numa caixa para poder configurar a margem */
+    margin: auto;
+}
+main strong{
+    color: var(--cor4);
+    font-weight: bold;
+}
+main a{
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--cor4);
+    background-color: var(--cor1);
+    padding: 2px 6px;
+}
+main a:hover{
+    text-decoration: underline;
+    color: var(--cor4);
+}
+div.video{ /* Gambiarra para ajustar videos */
+    background-color: var(--cor4);
+    margin: 0px -10px 30px -10px;
+    padding: 20px;
+    padding-bottom: 50%;
+    position: relative;
+}
+div.video > iframe{ /* Gambiarra para ajustar videos */
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+}
+aside{
+    background-color: var(--cor1);
+    border-radius: 10px;
+    padding: 0px 10px 10px 10px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.411);
+}
+aside > ul{
+    list-style-type: '\2714\00A0\00A0'; /* O código \00A0 da um espaço, ele é um ndsp. Note também que colocar esse tipo de emoji não é compatível com todo tipo de navegador. */
+    list-style-position: inside;
+    columns: 2;
+}
+footer{
+    background-color: var(--cor4);
+    color: white;
+    text-align: center;
+    padding: 4px;
+}
+footer > p{
+    text-align: center;
+    margin: 0px;
+}
+footer a{
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+}
+footer a:hover{
+    text-decoration: underline;
+    color: var(--cor2);
+}
+h1{
+    font-family: var(--fonte-android);
+    font-size: 1.6em;
+    padding: 4px;
+}
+h2{
+    background-image: linear-gradient(to right, var(--cor1) 20%, transparent 90%);
+    font-family: var(--fonte-android);
+    font-weight: normal;
+    text-indent: 8px;
+}
+h3{
+    background-color: var(--cor3);
+    border-radius: 10px 10px 0px 0px;
+    color: white;
+    padding: 6px;
+    margin-top: 0px;
+    margin-left: -10px;
+    margin-right: -10px;
+}
+p{
+    text-align: justify;
+    text-indent: 30px;
+    font-size: 1em;
+    line-height: 2em;
+}
+.cor4{
+    color: var(--cor4);
+}
+a.externo::after{
+    content: '\00A0\1F517';
+}
